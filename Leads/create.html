@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create New Lead - Gym Lead CRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/Dashboard.css">
+  <link rel="stylesheet" href="../css/Leads.css">
+  <link rel="stylesheet" href="../css/LeadCreate.css">
+  <link rel="stylesheet" href="../css/design-system.css">
+</head>
+<body>
+  <div class="app-layout leads-app create-lead-app">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="brand-logo-wrap"><div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 5v14M18 5v14M2 9v6M22 9v6M6 12h12"/></svg></div><div class="brand-text"><span class="brand-title">Gym Lead <span class="highlight">CRM</span></span><span class="brand-subtitle">ENTERPRISE PORTAL</span></div></div></div>
+      <div class="sidebar-action-wrap"><a class="btn-sidebar-add" href="./create.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg><span>Add Lead</span></a></div>
+      <nav class="sidebar-nav" aria-label="Main navigation"><ul class="nav-list">
+        <li class="nav-item"><a href="../Dashboard/index.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Dashboard</span></a></li>
+        <li class="nav-item"><a href="./index.html" class="nav-link active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Leads</span><span class="nav-badge count-leads">24</span></a></li>
+        <li class="nav-item"><a href="../Follow-ups/index.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Follow-ups</span><span class="nav-badge count-urgent">3</span></a></li>
+        <li class="nav-item"><a href="../Reports/index.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg><span>Reports</span></a></li>
+        <li class="nav-item"><a href="../Settings/index.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 0 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5v.2a2 2 0 0 1-4 0v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 0 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 0 1 0-4h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 0 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3 1.7 1.7 0 0 0 1-1.5V3a2 2 0 0 1 4 0v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 0 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8 1.7 1.7 0 0 0 1.5 1h.2a2 2 0 0 1 0 4h-.2a1.7 1.7 0 0 0-1.5 1z"/></svg><span>Settings</span></a></li>
+      </ul></nav>
+      <div class="leads-sidebar-quote"><img src="../assets/leads-discipline.jpg" alt="Athlete training in the gym"><div class="quote-shade"></div><div class="quote-copy"><b>DISCIPLINE BUILDS</b><strong>STRONGER MEMBERS.</strong></div></div>
+      <div class="sidebar-user-footer"><div class="user-card-pill"><div class="avatar-circle">PS</div><div class="user-meta"><span class="user-name">Priya Sharma</span><span class="user-role">Receptionist</span></div><span class="user-menu-dots">⋮</span></div><button class="btn-logout" title="Log out" aria-label="Log out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg><span>Log Out</span></button></div>
+    </aside>
+    <div class="main-viewport">
+      <header class="dashboard-header"><div class="header-left"><button class="mobile-sidebar-toggle" id="mobileMenuToggle" aria-label="Toggle menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><label class="header-search-box"><svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input id="globalSearchInput" type="search" placeholder="Search leads, phone, or notes..."><span class="search-actions"><kbd class="kbd-badge">⌘K</kbd></span></label></div><div class="header-right"><div class="header-status-pill"><span class="status-dot"></span><span>CRM Systems Operational</span></div><div class="header-date-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tue, 16 Sep 2026</span></div><button class="header-action-bell" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M10 21a2 2 0 0 0 4 0"/></svg><span class="bell-badge">1</span></button><div class="header-user-avatar">PS</div></div></header>
+      <main class="dashboard-scroll-content lead-create-content">
+        <div class="create-page-heading"><div><p class="create-breadcrumb"><a href="./index.html">← Back to Leads</a><span>/</span><span>New Prospect</span></p><div class="create-heading-line"><h1>Create New Lead</h1><span class="prospect-registration">New Prospect Registration</span></div><p class="create-subtitle">Capture a new enquiry and keep every potential member organized.</p></div><div class="create-heading-actions"><a class="cancel-create" href="./index.html">Cancel</a><button class="create-submit" type="submit" form="createLeadForm">Create Lead <span>→</span></button></div></div>
+        <form id="createLeadForm" class="lead-create-form">
+          <section class="create-card basic-card" aria-labelledby="basicInfoTitle"><header class="create-card-head"><span class="step-number step-blue">1</span><div><h2 id="basicInfoTitle">Basic Information</h2><p>Primary prospect contact credentials &amp; discovery source</p></div><span class="required-note"><b>*</b> Required fields</span></header><div class="create-divider"></div><div class="basic-fields">
+            <label class="create-field"><span>Full Name <b>*</b></span><span class="create-input"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><input name="fullName" value="Rahul Sharma (Receptionist)" required></span></label>
+            <label class="create-field"><span>Phone Number <b>*</b></span><span class="create-input phone-input"><span class="country-prefix">+91</span><input name="phone" type="tel" value="98021 44521" required></span></label>
+            <label class="create-field"><span>Email Address</span><span class="create-input"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><input name="email" type="email" value="rahul.sharma@example.com"></span></label>
+            <label class="create-field"><span>Lead Acquisition Source <b>*</b></span><span class="create-select source-select"><span class="walkin-symbol">♟</span><select name="source" required><option>Walk-in Enquiry</option><option>Phone Call</option><option>WhatsApp</option><option>Instagram</option><option>Website</option><option>Referral</option></select><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 10 5 5 5-5"/></svg></span></label>
+          </div><div class="popular-sources"><span>Popular:</span><button type="button" class="source-chip selected" data-source="Walk-in Enquiry">Walk-in</button><button type="button" class="source-chip" data-source="WhatsApp">WhatsApp</button><button type="button" class="source-chip" data-source="Instagram">Instagram</button><button type="button" class="source-chip" data-source="Phone Call">Phone</button></div></section>
+          <section class="create-card fitness-card" aria-labelledby="fitnessTitle"><header class="create-card-head"><span class="step-number step-green">2</span><div><h2 id="fitnessTitle">Member Interest &amp; Fitness Goals</h2><p>Tailor personal coaching and membership recommendations</p></div></header><div class="create-divider"></div><fieldset class="fitness-goals"><legend>Primary Fitness Goal</legend><div class="goal-options">
+            <label class="goal-option"><input type="radio" name="fitnessGoal" value="Weight Loss"><span><b>♙</b><strong>Weight Loss</strong><small>Burn fat &amp; tone</small></span></label>
+            <label class="goal-option selected"><input type="radio" name="fitnessGoal" value="Muscle Gain" checked><span><b>💪</b><strong>Muscle Gain</strong><small>Hypertrophy &amp; Bulk</small></span></label>
+            <label class="goal-option"><input type="radio" name="fitnessGoal" value="Strength & Power"><span><b>ϟ</b><strong>Strength &amp; Power</strong><small>Heavy lifting</small></span></label>
+            <label class="goal-option"><input type="radio" name="fitnessGoal" value="General Fitness"><span><b>♙</b><strong>General Fitness</strong><small>Cardio &amp; stamina</small></span></label>
+          </div></fieldset><div class="fitness-fields">
+            <label class="create-field"><span>Package Interest</span><span class="create-select"><select name="package"><option>6-Month Pro Strength</option><option>1-Month Starter</option><option>3-Month Membership</option><option>Annual Membership</option></select><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 10 5 5 5-5"/></svg></span></label>
+            <label class="create-field"><span>Preferred Contact Method</span><span class="create-select"><select name="contactMethod"><option>WhatsApp Messaging</option><option>Phone Call</option><option>Email</option><option>SMS</option></select><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 10 5 5 5-5"/></svg></span></label>
+            <label class="create-field"><span>Expected Monthly Budget</span><span class="create-input budget-input"><span>₹</span><input name="budget" value="3,500 - 4,500"></span></label>
+          </div></section>
+          <section class="create-card followup-card" aria-labelledby="followupTitle"><header class="create-card-head"><span class="step-number step-amber">3</span><div><h2 id="followupTitle">Follow-up &amp; Staff Assignment</h2><p>Assign duty to staff &amp; trigger automated notifications</p></div></header><div class="create-divider"></div><div class="followup-fields">
+            <label class="create-field"><span>Assigned Staff</span><span class="create-select"><select name="assignedStaff"><option>Priya Sharma</option><option>Rajesh Kumar</option><option>Admin User</option></select><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 10 5 5 5-5"/></svg></span></label>
+            <label class="create-field"><span>Follow-up Date</span><span class="create-input"><input name="followupDate" value="09/16/2026" aria-label="Follow-up Date"></span></label>
+            <label class="create-field"><span>Follow-up Time</span><span class="create-input"><input name="followupTime" value="10:30 AM" aria-label="Follow-up Time"></span></label>
+            <fieldset class="priority-field"><legend>Lead Priority</legend><div class="priority-options"><label><input type="radio" name="priority" value="Low"><span>Low</span></label><label><input type="radio" name="priority" value="Med"><span>Med</span></label><label class="selected"><input type="radio" name="priority" value="High" checked><span>High</span></label></div></fieldset>
+          </div></section>
+          <section class="create-card notes-card" aria-labelledby="notesTitle"><header class="create-card-head"><span class="step-number step-purple">4</span><div><h2 id="notesTitle">Enquiry Notes &amp; Special Requests</h2><p>Record fitness background, previous injuries or schedule preferences</p></div><span class="markdown-note">Markdown supported</span></header><div class="create-divider"></div><label class="notes-field"><span class="visually-hidden">Enquiry notes</span><textarea name="notes">Prospect visited the facility during lunch break. Very motivated to resume heavy compound weightlifting. Requested 1 complimentary trial workout before committing to the 6-Month Pro plan.</textarea></label></section>
+
+          <!-- Step 5: Conversation History & Initial Touchpoints -->
+          <section class="create-card conversation-history-card" aria-labelledby="conversationTitle">
+            <header class="create-card-head">
+              <span class="step-number step-cyan">5</span>
+              <div>
+                <h2 id="conversationTitle">Conversation History &amp; Initial Contact</h2>
+                <p>Cross-channel interactions and discovery communication with this prospect</p>
+              </div>
+              <div class="conversation-tabs" role="tablist" aria-label="Conversation channels">
+                <button type="button" class="active" role="tab" aria-selected="true" data-channel="all">All Channels</button>
+                <button type="button" role="tab" aria-selected="false" data-channel="whatsapp">WhatsApp</button>
+                <button type="button" role="tab" aria-selected="false" data-channel="phone">Phone Calls</button>
+                <button type="button" role="tab" aria-selected="false" data-channel="notes">Walk-in Notes</button>
+              </div>
+            </header>
+            <div class="create-divider"></div>
+
+            <div class="conversation-feed" id="conversationFeed">
+              
+              <!-- 1. WhatsApp Interaction -->
+              <article class="conversation-item" data-channel="whatsapp">
+                <div class="convo-item-badge whatsapp-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                  </svg>
+                  <span>WhatsApp Chat Thread</span>
+                </div>
+                <div class="convo-item-header">
+                  <div class="convo-actor">
+                    <span class="actor-avatar ps-avatar">PS</span>
+                    <div class="actor-info">
+                      <strong class="actor-name">Priya Sharma <span class="actor-role">Receptionist</span></strong>
+                      <span class="actor-interaction">WhatsApp messaging with <b>Rahul Sharma</b></span>
+                    </div>
+                  </div>
+                  <div class="convo-meta">
+                    <span class="convo-time">Today • 10:15 AM</span>
+                    <span class="convo-status-tag tag-success">Delivered &amp; Read</span>
+                  </div>
+                </div>
+                
+                <div class="convo-thread-box">
+                  <div class="chat-msg chat-outbound">
+                    <div class="msg-bubble">
+                      <p>Hi Rahul! Thanks for your interest in Gym Lead CRM. Here are the details of our <strong>6-Month Pro Strength</strong> membership &amp; trial pass you requested.</p>
+                      <span class="msg-time">10:15 AM · Priya</span>
+                    </div>
+                  </div>
+                  <div class="chat-msg chat-inbound">
+                    <div class="msg-bubble">
+                      <p>Thanks Priya! Does the membership include personal trainer consultation for compound lifts like squats and deadlifts?</p>
+                      <span class="msg-time">10:18 AM · Rahul</span>
+                    </div>
+                  </div>
+                  <div class="chat-msg chat-outbound">
+                    <div class="msg-bubble">
+                      <p>Yes, absolutely! Every 6-Month plan includes a complimentary 1-on-1 fitness assessment and customized workout plan. When would you like to drop in for your free trial workout session?</p>
+                      <span class="msg-time">10:20 AM · Priya</span>
+                    </div>
+                  </div>
+                  <div class="chat-msg chat-inbound">
+                    <div class="msg-bubble">
+                      <p>Awesome, that sounds great. I can drop by this evening around 6:30 PM after office hours.</p>
+                      <span class="msg-time">10:24 AM · Rahul</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 2. Phone Call Log -->
+              <article class="conversation-item" data-channel="phone">
+                <div class="convo-item-badge phone-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span>Inbound Discovery Call</span>
+                </div>
+                <div class="convo-item-header">
+                  <div class="convo-actor">
+                    <span class="actor-avatar ps-avatar">PS</span>
+                    <div class="actor-info">
+                      <strong class="actor-name">Priya Sharma <span class="actor-role">Receptionist</span></strong>
+                      <span class="actor-interaction">Phone Call with <b>Rahul Sharma</b> (+91 98021 44521)</span>
+                    </div>
+                  </div>
+                  <div class="convo-meta">
+                    <span class="convo-time">Yesterday • 04:30 PM</span>
+                    <span class="convo-status-tag tag-blue">Duration: 3m 42s</span>
+                  </div>
+                </div>
+                
+                <div class="convo-call-body">
+                  <div class="call-summary-row">
+                    <span class="call-chip"><b>Call Disposition:</b> High Intent</span>
+                    <span class="call-chip"><b>Interest:</b> Hypertrophy &amp; Compound Lifting</span>
+                    <span class="call-chip"><b>Expected Budget:</b> ₹3,500 - ₹4,500/mo</span>
+                  </div>
+                  <p class="call-notes-text">
+                    Prospect called inquiring about barbell equipment quality and peak evening hours. Confirmed we have 4 Olympic lifting platforms with bumper plates and certified coaches on the floor. Answered questions regarding gym timings (6:00 AM - 10:30 PM) and promised to WhatsApp our complete rate sheet and trial workout pass.
+                  </p>
+                </div>
+              </article>
+
+              <!-- 3. Walk-in Consultation Notes -->
+              <article class="conversation-item" data-channel="notes">
+                <div class="convo-item-badge notes-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  <span>Walk-in Consultation</span>
+                </div>
+                <div class="convo-item-header">
+                  <div class="convo-actor">
+                    <span class="actor-avatar rk-avatar">RK</span>
+                    <div class="actor-info">
+                      <strong class="actor-name">Rajesh Kumar <span class="actor-role">Senior Fitness Coach</span></strong>
+                      <span class="actor-interaction">Front Desk Consultation • Facility Tour</span>
+                    </div>
+                  </div>
+                  <div class="convo-meta">
+                    <span class="convo-time">Sep 14, 2026 • 01:15 PM</span>
+                    <span class="convo-status-tag tag-amber">Tour Completed</span>
+                  </div>
+                </div>
+                
+                <div class="convo-call-body">
+                  <div class="call-summary-row">
+                    <span class="call-chip"><b>Tour Feedback:</b> 5/5 Stars</span>
+                    <span class="call-chip"><b>Preferred Workout Time:</b> 6:30 PM - 8:00 PM</span>
+                    <span class="call-chip"><b>Follow-up Status:</b> Trial Scheduled</span>
+                  </div>
+                  <p class="call-notes-text">
+                    Prospect visited the facility during lunch break. Took him on a 15-minute walkthrough of the free weights floor, locker rooms, steam bath, and cardio deck. Highly satisfied with gym cleanliness and ventilation. Handed over physical brochure and invited him for an evening trial.
+                  </p>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <div id="createFormMessage" class="create-form-message" aria-live="polite"></div>
+        </form>
+        <section class="growth-banner"><img class="growth-image" src="../assets/leads-gym.jpg" alt="Modern gym interior"><div class="growth-overlay"></div><div class="growth-copy"><span class="growth-eyebrow">● &nbsp;GROWTH &amp; CONVERSION PHILOSOPHY</span><h2>MORE CONVERSATIONS. STRONGER MEMBERS.</h2><p>Turn enquiries into committed members with smarter follow-ups. Consistent front-desk execution drives 3.2x higher lead-to-membership conversions.</p><div class="growth-stats"><span>◉ &nbsp;Avg 14 Min First Response</span><span>ϟ &nbsp;82% Follow-up Rate</span></div></div><div class="growth-mantra"><small>FIT PEOPLE</small><b>HAPPIER COMMUNITIES</b></div></section>
+      </main><footer class="leads-footer"><span>© 2026 Gym Lead CRM. All rights reserved.</span><nav><a href="#">Privacy Policy</a><i></i><a href="#">Security</a><i></i><a href="#">Help Desk</a></nav></footer>
+    </div>
+  </div>
+  <div class="modal-backdrop" id="addLeadModal"><div class="modal-card"><div class="modal-header"><h3 class="modal-title">New Lead Enquiry</h3><button class="modal-close-btn" id="closeLeadModal" aria-label="Close">&times;</button></div><form id="leadModalForm" class="modal-form"><div class="form-group"><label for="newLeadName">Full Name</label><input id="newLeadName" type="text" class="modal-input" placeholder="e.g. John Doe" required></div><div class="form-group"><label for="newLeadIntent">Enquiry Type</label><input id="newLeadIntent" type="text" class="modal-input" placeholder="e.g. Annual membership" required></div><div class="form-group"><label for="newLeadPhone">Phone Number</label><input id="newLeadPhone" type="tel" class="modal-input" placeholder="+91 90000 00000" required></div><div class="modal-actions"><button type="button" class="btn-cancel" id="cancelLeadModal">Cancel</button><button type="submit" class="btn-save">Save Lead</button></div></form></div></div>
+  <script src="../js/Leads.js"></script><script src="../js/LeadCreate.js"></script>
+</body>
+</html>

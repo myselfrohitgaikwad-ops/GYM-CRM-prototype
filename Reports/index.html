@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reports &amp; Analytics - Gym Lead CRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/Dashboard.css">
+  <link rel="stylesheet" href="../css/Leads.css">
+  <link rel="stylesheet" href="../css/Reports.css">
+  <link rel="stylesheet" href="../css/design-system.css">
+</head>
+<body>
+<div class="app-layout leads-app reports-app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="brand-logo-wrap"><div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 5v14M18 5v14M2 9v6M22 9v6M6 12h12"/></svg></div><div class="brand-text"><span class="brand-title">Gym Lead <span class="highlight">CRM</span></span><span class="brand-subtitle">ENTERPRISE PORTAL</span></div></div></div>
+    <div class="sidebar-action-wrap"><a class="btn-sidebar-add" href="../Leads/create.html"><span aria-hidden="true">＋</span><span>Add Lead</span></a></div>
+    <nav class="sidebar-nav" aria-label="Main navigation"><ul class="nav-list">
+      <li class="nav-item"><a href="../Dashboard/index.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Dashboard</span></a></li>
+      <li class="nav-item"><a href="../Leads/index.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Leads</span><span class="nav-badge count-leads">24</span></a></li>
+      <li class="nav-item"><a href="../Follow-ups/index.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Follow-ups</span><span class="nav-badge count-urgent">3</span></a></li>
+      <li class="nav-item"><a href="./index.html" class="nav-link active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg><span>Reports</span></a></li>
+      <li class="nav-item"><a href="../Settings/index.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 0 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5v.2a2 2 0 0 1-4 0v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 0 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 0 1 0-4h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 0 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3 1.7 1.7 0 0 0 1-1.5V3a2 2 0 0 1 4 0v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 0 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8 1.7 1.7 0 0 0 1.5 1h.2a2 2 0 0 1 0 4h-.2a1.7 1.7 0 0 0-1.5 1z"/></svg><span>Settings</span></a></li>
+    </ul></nav>
+    <div class="leads-sidebar-quote"><img src="../assets/report-sidebar.png" alt="Atmospheric gym training facility"><div class="quote-shade"></div><div class="quote-copy"><b>DISCIPLINE BUILDS</b><strong>STRONGER MEMBERS.</strong></div></div>
+    <div class="sidebar-user-footer"><div class="user-card-pill"><div class="avatar-circle">PS</div><div class="user-meta"><span class="user-name">Priya Sharma</span><span class="user-role">Receptionist</span></div><span class="user-menu-dots">⋮</span></div><button class="btn-logout" title="Log out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg><span>Log Out</span></button></div>
+  </aside>
+  <div class="main-viewport">
+    <header class="dashboard-header"><div class="header-left"><button class="mobile-sidebar-toggle" id="mobileMenuToggle" aria-label="Toggle menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><label class="header-search-box"><img class="search-icon" src="../assets/followups-icons/icon-01.svg" alt=""><input id="globalSearchInput" type="search" placeholder="Search leads, phone, or notes..."><span class="search-actions"><kbd class="kbd-badge">⌘K</kbd></span></label></div><div class="header-right"><div class="header-status-pill"><span class="status-dot"></span><span>CRM Systems Operational</span></div><div class="header-date-pill"><img src="../assets/followups-icons/icon-02.svg" alt=""><span>Tue, 16 Sep 2026</span></div><button type="button" class="header-action-bell" aria-label="Notifications"><img src="../assets/followups-icons/icon-03.svg" alt=""><span class="bell-badge">1</span></button><div class="header-user-avatar">PS</div></div></header>
+    <main class="dashboard-scroll-content reports-content">
+      <section class="reports-titlebar"><div><h1>Reports &amp; Analytics</h1><p>Understand your gym's lead performance, follow-ups and conversion trends.</p></div><div class="reports-actions"><button class="report-filter" id="reportDate"><img src="../assets/reports-icons/935a0.svg" alt=""><span>This Month</span><img class="chevron" src="../assets/reports-icons/d01c7.svg" alt=""></button><button class="report-export" id="exportReport"><img src="../assets/reports-icons/8f887.svg" alt=""><span>Export Report</span></button></div></section>
+
+      <section class="report-kpis" aria-label="Lead performance summary">
+        <article class="report-kpi"><div class="rk-head"><span>TOTAL LEADS</span><i class="rk-icon cyan"><img src="../assets/reports-icons/98779.svg" alt=""></i></div><div class="rk-value"><strong>128</strong><span class="rk-trend">↗ 14.2%</span></div><small>vs. prev 30 days</small><div class="spark cyan-spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="report-kpi"><div class="rk-head"><span>CONTACTED</span><i class="rk-icon blue"><img src="../assets/reports-icons/ef1cf.svg" alt=""></i></div><div class="rk-value"><strong>86</strong><span class="rk-trend">67.2%</span></div><small>Contact outreach</small><div class="rk-progress"><i style="width:67.2%"></i></div></article>
+        <article class="report-kpi"><div class="rk-head"><span>FOLLOW-UPS</span><i class="rk-icon violet"><img src="../assets/reports-icons/ed82e.svg" alt=""></i></div><div class="rk-value"><strong>42</strong><span class="rk-state">Active</span></div><small>Tasks assigned to staff</small><div class="spark violet-spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="report-kpi"><div class="rk-head"><span>CONVERTED</span><i class="rk-icon green"><img src="../assets/reports-icons/af9d9.svg" alt=""></i></div><div class="rk-value"><strong>18</strong><span class="rk-trend">14.1%</span></div><small>Membership rate</small><div class="rk-progress green-progress"><i style="width:14.1%"></i></div></article>
+        <article class="report-kpi"><div class="rk-head"><span>LOST LEADS</span><i class="rk-icon rose"><img src="../assets/reports-icons/3b1d3.svg" alt=""></i></div><div class="rk-value"><strong>14</strong><span class="rk-loss">10.9%</span></div><small>Unqualified / lost</small><div class="rk-progress rose-progress"><i style="width:10.9%"></i></div></article>
+      </section>
+
+      <section class="reports-grid charts-grid" aria-label="Lead conversion charts">
+        <article class="report-card funnel-card"><header class="panel-heading"><div><h2>Lead Funnel</h2><p>How enquiries move through your gym's conversion journey</p></div><span class="panel-total">Total <b>128 Leads</b></span></header>
+          <div class="funnel-steps">
+            <div class="funnel-step"><div class="funnel-copy"><span class="step-num">1.</span><b>New Leads</b></div><strong>128 <small>(100%)</small></strong><div class="funnel-track"><i style="width:100%"></i><span>128 Received</span></div></div>
+            <div class="funnel-step"><div class="funnel-copy"><span class="step-num">2.</span><b>Contacted</b><em>−32.8% drop</em></div><strong>86 <small>(67.2%)</small></strong><div class="funnel-track"><i style="width:67.2%"></i><span>86 Outreached</span></div></div>
+            <div class="funnel-step"><div class="funnel-copy"><span class="step-num">3.</span><b>Engaged</b><em>−25.0% drop</em></div><strong>54 <small>(42.2%)</small></strong><div class="funnel-track"><i style="width:42.2%"></i><span>54 Trial / Tours</span></div></div>
+            <div class="funnel-step"><div class="funnel-copy"><span class="step-num">4.</span><b>Follow-up in Progress</b><em>−17.2% drop</em></div><strong>32 <small>(25.0%)</small></strong><div class="funnel-track"><i style="width:25%"></i><span>32 Warm Pipeline</span></div></div>
+            <div class="funnel-step final-step"><div class="funnel-copy"><span class="step-num">5.</span><b>Converted</b><em>Goal Finalized</em></div><strong>18 <small>(14.1%)</small></strong><div class="funnel-track"><i style="width:14.1%"></i><span>18 Members</span></div></div>
+          </div><footer class="funnel-footer"><span>Overall Conversion: <b>14.1%</b></span><span>Target 12.5% <b>+1.6%</b></span></footer>
+        </article>
+        <article class="report-card volume-card"><header class="panel-heading"><div><h2>Lead Volume</h2><p>New leads received over time</p></div><span class="peak-badge"><i></i>Peak: Week 3 · 42 new leads</span></header>
+          <div class="volume-chart"><div class="chart-y-labels"><span>50</span><span>35</span><span>20</span><span>5</span><span>0</span></div><div class="chart-main"><div class="chart-gridlines"><i></i><i></i><i></i><i></i><i></i></div><img src="../assets/reports-icons/c13fe.svg" alt="Lead volume trend rising to a peak in week three"><div class="chart-x-labels"><span>Week 1 (22)</span><span>Week 2 (31)</span><span>Week 3 (42)</span><span>Week 4 (33)</span></div></div></div>
+          <footer class="volume-footer"><span><i class="legend-dot"></i> New leads</span><div><b>128</b><small>Prospects</small></div><div><b>+18.5%</b><small>Growth Velocity</small></div></footer>
+        </article>
+      </section>
+
+      <section class="reports-grid insights-grid" aria-label="Acquisition and follow-up insights">
+        <article class="report-card sources-card"><header class="panel-heading"><div><h2>Lead Sources</h2><p>Where your gym enquiries are coming from</p></div><span class="channel-count">6 Channels Active</span></header>
+          <div class="source-table-wrap"><table class="source-table"><thead><tr><th>SOURCE</th><th>LEADS</th><th>CONVERTED</th><th>CONV. RATE</th><th>VISUAL SHARE</th></tr></thead><tbody>
+            <tr><td><i class="source-mark walk"><img src="../assets/reports-icons/7b7f4.svg" alt=""></i>Walk-in</td><td>32</td><td>8</td><td><b class="rate-high">25.0%</b></td><td><span class="share"><i style="width:100%"></i></span></td></tr>
+            <tr><td><i class="source-mark phone"><img src="../assets/reports-icons/5a287.svg" alt=""></i>Phone</td><td>28</td><td>4</td><td><b>14.3%</b></td><td><span class="share"><i style="width:87.5%"></i></span></td></tr>
+            <tr><td><i class="source-mark whatsapp"><img src="../assets/reports-icons/e0baf.svg" alt=""></i>WhatsApp</td><td>26</td><td>3</td><td><b>11.5%</b></td><td><span class="share"><i style="width:81.25%"></i></span></td></tr>
+            <tr><td><i class="source-mark website"><img src="../assets/reports-icons/59565.svg" alt=""></i>Website</td><td>18</td><td>2</td><td><b>11.1%</b></td><td><span class="share"><i style="width:56.25%"></i></span></td></tr>
+            <tr><td><i class="source-mark social"><img src="../assets/reports-icons/45ea4.svg" alt=""></i>Social Media</td><td>16</td><td>1</td><td><b>6.3%</b></td><td><span class="share"><i style="width:50%"></i></span></td></tr>
+            <tr><td><i class="source-mark referral"><img src="../assets/reports-icons/0a8e1.svg" alt=""></i>Referral</td><td>8</td><td>2</td><td><b class="rate-high">25.0%</b></td><td><span class="share"><i style="width:25%"></i></span></td></tr>
+          </tbody></table></div><footer class="source-footer"><span><b>High intent channels:</b> Walk-in &amp; Referral (25% conversion)</span><a href="#">View Acquisition Details <span>→</span></a></footer>
+        </article>
+        <div class="insight-stack">
+          <article class="report-card follow-performance"><header class="panel-heading"><div><h2>Follow-up Performance</h2><p>Reception execution and follow-up resolution</p></div><span class="channel-count">Monthly Resolution</span></header>
+            <div class="follow-stats"><div><span class="stat-icon due">◷</span><b>42</b><small>Due</small></div><div><span class="stat-icon completed">✓</span><b>34</b><small>Completed</small></div><div><span class="stat-icon overdue">!</span><b>5</b><small>Overdue</small></div><div><span class="stat-icon moved">↻</span><b>3</b><small>Rescheduled</small></div></div>
+            <div class="completion-track"><i></i></div><div class="completion-badge">◉ &nbsp;81% Follow-up Completion Rate · Target Met</div>
+          </article>
+          <article class="report-card conversion-insight"><div class="insight-body"><div class="insight-head"><span class="insight-icon"><img src="../assets/reports-icons/5bdb0.svg" alt=""></span><b>Conversion Insight</b><span class="insight-tag">ACTIONABLE TAKEAWAY</span></div><span class="insight-label">Front-desk operational strategy</span><h2>Walk-in leads are converting strongly</h2><p>Front-desk enquiries represent one of the highest converting channels at 25% conversion. Prioritize immediate welcome consultations and same-day trial passes for walk-ins.</p><footer><span>Channel velocity</span><b>↗ +8.4% <small>vs last month</small></b></footer></div></article>
+        </div>
+      </section>
+
+      <section class="growth-banner report-growth"><img class="growth-image" src="../assets/report-gym.png" alt="Modern gym training floor"><div class="growth-overlay"></div><div class="growth-copy"><span class="growth-eyebrow">● &nbsp;GROWTH &amp; CONVERSION PHILOSOPHY</span><h2>MORE CONVERSATIONS. STRONGER MEMBERS.</h2><p>Turn enquiries into committed members with smarter follow-ups. Consistent front-desk execution drives 3.2x higher lead-to-membership conversions.</p><div class="growth-stats"><span>◉ &nbsp;Avg 14 Min First Response</span><span>ϟ &nbsp;82% Follow-up Rate</span></div></div><div class="growth-mantra"><small>FIT PEOPLE</small><b>HAPPIER COMMUNITIES</b></div></section>
+    </main>
+    <footer class="leads-footer reports-footer"><span>© 2026 Gym Lead CRM. All rights reserved.</span><nav><a href="#">Privacy Policy</a><i></i><a href="#">Security</a><i></i><a href="#">Help Desk</a></nav></footer>
+  </div>
+</div>
+<div class="modal-backdrop" id="addLeadModal"><div class="modal-card"><div class="modal-header"><h3 class="modal-title">New Lead Enquiry</h3><button class="modal-close-btn" id="closeLeadModal" aria-label="Close">&times;</button></div><form id="leadModalForm" class="modal-form"><div class="form-group"><label for="newLeadName">Full Name</label><input id="newLeadName" type="text" class="modal-input" placeholder="e.g. John Doe" required></div><div class="form-group"><label for="newLeadIntent">Enquiry Type</label><input id="newLeadIntent" type="text" class="modal-input" placeholder="e.g. Annual membership" required></div><div class="form-group"><label for="newLeadPhone">Phone Number</label><input id="newLeadPhone" type="tel" class="modal-input" placeholder="+91 90000 00000" required></div><div class="modal-actions"><button type="button" class="btn-cancel" id="cancelLeadModal">Cancel</button><button type="submit" class="btn-save">Save Lead</button></div></form></div></div>
+<script src="../js/Leads.js"></script><script src="../js/Reports.js"></script>
+</body>
+</html>

@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gym Lead CRM - Enterprise Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/Dashboard.css" />
+  <link rel="stylesheet" href="../css/design-system.css">
+  <style>
+    /* Linear gradients for all buttons in this file */
+    button,
+    .btn-sidebar-add,
+    .btn-table-action,
+    .btn-quick-action,
+    .tab-btn,
+    .btn-complete-task,
+    .btn-cancel,
+    .btn-save,
+    .btn-logout,
+    .modal-close-btn,
+    .btn-more-options,
+    .mobile-sidebar-toggle,
+    .filter-toggle-btn {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    /* 1. Sidebar Add Lead Button */
+    .app-layout .btn-sidebar-add,
+    .btn-sidebar-add {
+      background: linear-gradient(135deg, #0099ff 0%, #0066ff 100%) !important;
+      border: 1px solid #1497cc !important;
+      box-shadow: 0 4px 14px rgba(0, 153, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+    }
+    .app-layout .btn-sidebar-add:hover,
+    .btn-sidebar-add:hover {
+      background: linear-gradient(135deg, #0088e6 0%, #0055e6 100%) !important;
+      box-shadow: 0 6px 18px rgba(0, 102, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* 2. Sidebar Logout Button */
+    .app-layout .sidebar-user-footer .btn-logout,
+    .btn-logout {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 8px !important;
+      color: #94a3b8 !important;
+    }
+    .app-layout .sidebar-user-footer .btn-logout:hover,
+    .btn-logout:hover {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.25) 0%, rgba(220, 38, 38, 0.35) 100%) !important;
+      border-color: rgba(239, 68, 68, 0.4) !important;
+      color: #fca5a5 !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* 3. Header Toggle & Search Filter Buttons */
+    .mobile-sidebar-toggle {
+      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%) !important;
+      border: 1px solid var(--border-light, #e2e8f0) !important;
+      border-radius: 8px !important;
+    }
+    .mobile-sidebar-toggle:hover {
+      background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%) !important;
+      color: var(--brand-navy, #0f172a) !important;
+    }
+    .filter-toggle-btn {
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
+      border: 1px solid var(--border-light, #e2e8f0) !important;
+      border-radius: 6px !important;
+    }
+    .filter-toggle-btn:hover {
+      background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%) !important;
+      border-color: #bfdbfe !important;
+      color: #0084ff !important;
+    }
+
+    /* 4. Table Action: Call Now (Blue Gradient) */
+    .app-layout .btn-table-action.call-now,
+    .btn-table-action.call-now {
+      background: linear-gradient(135deg, #0084ff 0%, #0059e6 100%) !important;
+      border: none !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 8px rgba(0, 132, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    }
+    .app-layout .btn-table-action.call-now:hover,
+    .btn-table-action.call-now:hover {
+      background: linear-gradient(135deg, #0073e6 0%, #004ecc 100%) !important;
+      box-shadow: 0 4px 12px rgba(0, 132, 255, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* 5. Table Action: Urgent Follow-Up (Red Gradient) */
+    .app-layout .btn-table-action.red-followup,
+    .btn-table-action.red-followup {
+      background: linear-gradient(135deg, #f87171 0%, #ef4444 55%, #dc2626 100%) !important;
+      border: none !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 8px rgba(239, 68, 68, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    }
+    .app-layout .btn-table-action.red-followup:hover,
+    .btn-table-action.red-followup:hover {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 55%, #b91c1c 100%) !important;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* 6. Table Action: Outline Call (Light Surface Gradient) */
+    .app-layout .btn-table-action.outline,
+    .btn-table-action.outline {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+      border: 1px solid var(--border-light, #e2e8f0) !important;
+      color: var(--text-secondary, #475569) !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+    }
+    .app-layout .btn-table-action.outline:hover,
+    .btn-table-action.outline:hover {
+      background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%) !important;
+      border-color: #cbd5e1 !important;
+      color: var(--brand-navy, #0f172a) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* 7. Table Row More Options Button */
+    .btn-more-options {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+      border: 1px solid var(--border-light, #e2e8f0) !important;
+      border-radius: 6px !important;
+    }
+    .btn-more-options:hover {
+      background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+      border-color: #cbd5e1 !important;
+      color: var(--brand-navy, #0f172a) !important;
+    }
+
+    /* 8. Quick Actions: Primary (+ Add Lead) */
+    .app-layout .btn-quick-action.primary,
+    .btn-quick-action.primary {
+      background: linear-gradient(135deg, #00a2ff 0%, #0066ff 100%) !important;
+      border: none !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px rgba(0, 153, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    }
+    .app-layout .btn-quick-action.primary:hover,
+    .btn-quick-action.primary:hover {
+      background: linear-gradient(135deg, #0090e6 0%, #0055e6 100%) !important;
+      box-shadow: 0 6px 18px rgba(0, 102, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* 9. Quick Actions: Outline Buttons */
+    .app-layout .btn-quick-action.outline,
+    .btn-quick-action.outline {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+      border: 1px solid var(--border-light, #e2e8f0) !important;
+      color: var(--text-main, #1e293b) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+    }
+    .app-layout .btn-quick-action.outline:hover,
+    .btn-quick-action.outline:hover {
+      background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%) !important;
+      border-color: #cbd5e1 !important;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* 10. Follow-up Tab Buttons */
+    .tab-btn:hover:not(.active) {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(241, 245, 249, 0.9) 100%) !important;
+      color: var(--brand-navy, #0f172a) !important;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+      color: var(--brand-navy, #0f172a) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+      border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    }
+
+    /* 11. Task Complete Button */
+    .btn-complete-task {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+      border: 1px solid var(--border-light, #e2e8f0) !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+    }
+    .btn-complete-task:hover {
+      background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%) !important;
+      border-color: #86efac !important;
+      color: #15803d !important;
+      box-shadow: 0 2px 6px rgba(22, 163, 74, 0.15) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* 12. Modal Buttons (Close, Cancel, Save Lead) */
+    .modal-close-btn {
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
+      border: 1px solid var(--border-light, #e2e8f0) !important;
+      border-radius: 8px !important;
+      width: 32px !important;
+      height: 32px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .modal-close-btn:hover {
+      background: linear-gradient(180deg, #fee2e2 0%, #fecaca 100%) !important;
+      border-color: #fca5a5 !important;
+      color: #dc2626 !important;
+    }
+    .app-layout .btn-cancel,
+    .btn-cancel {
+      background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%) !important;
+      border: 1px solid var(--border-light, #e2e8f0) !important;
+      color: var(--text-secondary, #475569) !important;
+    }
+    .app-layout .btn-cancel:hover,
+    .btn-cancel:hover {
+      background: linear-gradient(180deg, #f1f5f9 0%, #cbd5e1 100%) !important;
+      color: var(--brand-navy, #0f172a) !important;
+    }
+    .app-layout .btn-save,
+    .btn-save {
+      background: linear-gradient(135deg, #0084ff 0%, #005ce6 100%) !important;
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: 0 2px 8px rgba(0, 132, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    }
+    .app-layout .btn-save:hover,
+    .btn-save:hover {
+      background: linear-gradient(135deg, #0073e6 0%, #004ecc 100%) !important;
+      box-shadow: 0 4px 12px rgba(0, 132, 255, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+      transform: translateY(-1px) !important;
+    }
+  </style>
+</head>
+<body>   
+  <div class="app-layout">
+    
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo-wrap">
+          <div class="logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <path d="M6 5v14M18 5v14M2 9v6M22 9v6M6 12h12" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">Gym Lead <span class="highlight">CRM</span></span>
+            <span class="brand-subtitle">ENTERPRISE PORTAL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Add Lead Button -->
+      <div class="sidebar-action-wrap">
+        <a class="btn-sidebar-add" href="../Leads/create.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Add Lead</span>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Dashboard</span>
+              <span class="nav-active-dot"></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../Leads/index.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>Leads</span>
+              <span class="nav-badge count-leads">24</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../Follow-ups/index.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Follow-ups</span>
+              <span class="nav-badge count-urgent">3</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../Reports/index.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              <span>Reports</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../Settings/index.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-user-footer">
+        <div class="user-card-pill">
+          <div class="avatar-circle">PS</div>
+          <div class="user-meta">
+            <span class="user-name">Priya Sharma</span>
+            <span class="user-role">Receptionist</span>
+          </div>
+        </div>
+        <button class="btn-logout" title="Log out">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Log Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT WRAPPER ================= -->
+    <div class="main-viewport">
+      
+      <!-- Top Header Navigation -->
+      <header class="dashboard-header">
+        <div class="header-left">
+          <button class="mobile-sidebar-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          
+          <!-- Search input with shortcut badge -->
+          <div class="header-search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="globalSearchInput" placeholder="Search leads, phone, or notes..." />
+            <div class="search-actions">
+              <kbd class="kbd-badge">⌘K</kbd>
+              <button class="filter-toggle-btn" title="Filter options">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="4" y1="21" x2="4" y2="14"></line>
+                  <line x1="4" y1="10" x2="4" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12" y2="3"></line>
+                  <line x1="20" y1="21" x2="20" y2="16"></line>
+                  <line x1="20" y1="12" x2="20" y2="3"></line>
+                  <line x1="1" y1="14" x2="7" y2="14"></line>
+                  <line x1="9" y1="8" x2="15" y2="8"></line>
+                  <line x1="17" y1="16" x2="23" y2="16"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- Operational Status Pill -->
+          <div class="header-status-pill">
+            <span class="status-dot"></span>
+            <span>CRM Systems Operational</span>
+          </div>
+
+          <!-- Date Badge -->
+          <div class="header-date-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Tue, 16 Sep 2026</span>
+          </div>
+
+          <!-- Notifications -->
+          <div class="header-action-bell" id="notificationBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="bell-badge">1</span>
+          </div>
+
+          <!-- Profile Badge -->
+          <div class="header-user-avatar">PS</div>
+        </div>
+      </header>
+
+      <!-- Scrollable Main Viewport Area -->
+      <main class="dashboard-scroll-content">
+        
+        <!-- 1. Hero Welcome Banner -->
+        <section class="welcome-banner">
+          <div class="welcome-bg-image-wrapper">
+            <img 
+              src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1600&q=80" 
+              alt="Gym workout equipment" 
+              class="welcome-bg-img" 
+            />
+            <div class="welcome-overlay"></div>
+          </div>
+
+          <div class="welcome-text-side">
+            <div class="banner-badge">
+              <span class="banner-badge-dot"></span>
+              <span>FRONT DESK RECEPTION HUB</span>
+            </div>
+            <h1 class="welcome-heading">Good morning, Priya 👋</h1>
+            <p class="welcome-subtext">
+              Here's what needs your attention today. You have 
+              <strong class="highlight-urgent">3 overdue follow-ups</strong> and 
+              <strong class="highlight-scheduled">8 calls scheduled</strong>.
+            </p>
+          </div>
+
+          <div class="welcome-motto-side">
+            <div class="motto-eyebrow">MORE THAN A GYM</div>
+            <div class="motto-title">A HEALTHIER COMMUNITY</div>
+            <div class="motto-chip">FIT PEOPLE HAPPIER PEOPLE</div>
+          </div>
+        </section>
+
+        <!-- 2. Metric KPI Cards Grid -->
+        <section class="kpi-grid">
+          
+          <!-- Card 1: New Leads -->
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label">NEW LEADS</span>
+              <div class="kpi-icon-wrap blue-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val-row">
+              <span class="kpi-value">24</span>
+              <span class="kpi-delta positive">↗ +6% today</span>
+            </div>
+            <div class="kpi-bottom">
+              <span class="kpi-desc">Membership enquiries</span>
+              <!-- Mini SVG Sparkline -->
+              <svg class="kpi-sparkline" viewBox="0 0 70 20" fill="none">
+                <path d="M2 16L18 12L32 15L48 6L68 3" stroke="#0084ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 2: Calls Due -->
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label">CALLS DUE</span>
+              <div class="kpi-icon-wrap teal-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val-row">
+              <span class="kpi-value">8</span>
+              <span class="kpi-status-tag">Due today</span>
+            </div>
+            <div class="kpi-bottom">
+              <span class="kpi-desc">Follow-ups today</span>
+              <div class="kpi-mini-bars">
+                <span class="bar b1" style="height: 6px;"></span>
+                <span class="bar b2" style="height: 11px;"></span>
+                <span class="bar b3" style="height: 15px;"></span>
+                <span class="bar b4" style="height: 18px;"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Follow-ups -->
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label">FOLLOW-UPS</span>
+              <div class="kpi-icon-wrap purple-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val-row">
+              <span class="kpi-value">12</span>
+              <span class="kpi-status-tag">Due today</span>
+            </div>
+            <div class="kpi-bottom">
+              <span class="kpi-desc">Trial/member fo...</span>
+              <div class="kpi-mini-bars purple">
+                <span class="bar" style="height: 14px;"></span>
+                <span class="bar" style="height: 8px;"></span>
+                <span class="bar" style="height: 18px;"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Overdue -->
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label red-txt">OVERDUE</span>
+              <div class="kpi-icon-wrap red-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val-row">
+              <span class="kpi-value red-txt">3</span>
+              <span class="kpi-delta danger">Needs attention</span>
+            </div>
+            <div class="kpi-bottom">
+              <span class="kpi-desc">Missed follow-ups</span>
+              <div class="kpi-mini-bars red">
+                <span class="bar" style="height: 16px;"></span>
+                <span class="bar" style="height: 12px;"></span>
+                <span class="bar" style="height: 18px;"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Hot Leads -->
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label amber-txt">HOT LEADS</span>
+              <div class="kpi-icon-wrap amber-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val-row">
+              <span class="kpi-value amber-txt">6</span>
+              <span class="kpi-delta warning">High priority</span>
+            </div>
+            <div class="kpi-bottom">
+              <span class="kpi-desc">Ready to convert</span>
+              <div class="kpi-mini-bars amber">
+                <span class="bar" style="height: 8px;"></span>
+                <span class="bar" style="height: 12px;"></span>
+                <span class="bar" style="height: 15px;"></span>
+                <span class="bar" style="height: 18px;"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Conversions -->
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label green-txt">CONVERSIONS</span>
+              <div class="kpi-icon-wrap green-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-val-row">
+              <span class="kpi-value green-txt">4</span>
+              <span class="kpi-delta success">Today</span>
+            </div>
+            <div class="kpi-bottom">
+              <span class="kpi-desc">New memberships</span>
+              <svg class="kpi-sparkline" viewBox="0 0 70 20" fill="none">
+                <path d="M2 14L22 15L38 9L52 11L68 4" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- 3. Two-Column Dashboard Body -->
+        <div class="dashboard-columns-grid">
+          
+          <!-- LEFT COLUMN: Needs Attention Table -->
+          <section class="panel-card leads-attention-panel">
+            <div class="panel-header">
+              <div class="panel-title-wrap">
+                <h2 class="panel-title">Needs Attention</h2>
+                <span class="badge-count-red">3</span>
+              </div>
+              <a href="../Leads/index.html" class="panel-link-action">View all &rarr;</a>
+            </div>
+            <p class="panel-subtitle">Prioritized leads and tasks that need immediate action.</p>
+
+            <div class="table-responsive-container">
+              <table class="leads-table">
+                <thead>
+                  <tr>
+                    <th>LEAD</th>
+                    <th>STATUS</th>
+                    <th>NEXT ACTION</th>
+                    <th>DUE</th>
+                    <th>PRIORITY</th>
+                    <th>ACTION</th>
+                    <th class="th-more"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1 -->
+                  <tr>
+                    <td>
+                      <div class="lead-cell">
+                        <div class="lead-avatar blue-lead">RS</div>
+                        <div class="lead-info">
+                          <span class="lead-name">Rahul Sharma</span>
+                          <span class="lead-enquiry">Membership enquiry</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="status-pill-table follow-up">Follow-up</span></td>
+                    <td>
+                      <div class="action-cell">
+                        <svg class="action-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>Call</span>
+                      </div>
+                    </td>
+                    <td><span class="due-time">10:30 AM</span></td>
+                    <td><span class="priority-badge hot">Hot</span></td>
+                    <td>
+                      <button class="btn-table-action call-now">Call Now</button>
+                    </td>
+                    <td>
+                      <button class="btn-more-options" aria-label="More options">&vellip;</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2 -->
+                  <tr>
+                    <td>
+                      <div class="lead-cell">
+                        <div class="lead-avatar blue-lead">RS</div>
+                        <div class="lead-info">
+                          <span class="lead-name">Rahul Sharma</span>
+                          <span class="lead-enquiry">Membership enquiry</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="status-pill-table follow-up">Follow-up</span></td>
+                    <td>
+                      <div class="action-cell">
+                        <svg class="action-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>Call</span>
+                      </div>
+                    </td>
+                    <td><span class="due-time">10:30 AM</span></td>
+                    <td><span class="priority-badge hot">Hot</span></td>
+                    <td>
+                      <button class="btn-table-action call-now">Call Now</button>
+                    </td>
+                    <td>
+                      <button class="btn-more-options" aria-label="More options">&vellip;</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3 -->
+                  <tr>
+                    <td>
+                      <div class="lead-cell">
+                        <div class="lead-avatar gray-lead">AP</div>
+                        <div class="lead-info">
+                          <span class="lead-name">Amit Patil</span>
+                          <span class="lead-enquiry">Personal training</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="status-pill-table contacted">Contacted</span></td>
+                    <td>
+                      <div class="action-cell">
+                        <svg class="action-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>Call</span>
+                      </div>
+                    </td>
+                    <td><span class="due-time">11:15 AM</span></td>
+                    <td><span class="priority-badge high">High</span></td>
+                    <td>
+                      <button class="btn-table-action outline">Call</button>
+                    </td>
+                    <td>
+                      <button class="btn-more-options" aria-label="More options">&vellip;</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4 -->
+                  <tr>
+                    <td>
+                      <div class="lead-cell">
+                        <div class="lead-avatar gray-lead">AP</div>
+                        <div class="lead-info">
+                          <span class="lead-name">Amit Patil</span>
+                          <span class="lead-enquiry">Personal training</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="status-pill-table contacted">Contacted</span></td>
+                    <td>
+                      <div class="action-cell">
+                        <svg class="action-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>Call</span>
+                      </div>
+                    </td>
+                    <td><span class="due-time">11:15 AM</span></td>
+                    <td><span class="priority-badge high">High</span></td>
+                    <td>
+                      <button class="btn-table-action outline">Call</button>
+                    </td>
+                    <td>
+                      <button class="btn-more-options" aria-label="More options">&vellip;</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 5 (Overdue / WhatsApp) -->
+                  <tr>
+                    <td>
+                      <div class="lead-cell">
+                        <div class="lead-avatar pink-lead">SJ</div>
+                        <div class="lead-info">
+                          <span class="lead-name">Sneha Joshi</span>
+                          <span class="lead-enquiry">Trial session</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="status-pill-table follow-up">Follow-up</span></td>
+                    <td>
+                      <div class="action-cell whatsapp">
+                        <svg class="action-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        <span>WhatsApp</span>
+                      </div>
+                    </td>
+                    <td><span class="due-time overdue-time">45 mins ago</span></td>
+                    <td><span class="priority-badge high">High</span></td>
+                    <td>
+                      <button class="btn-table-action red-followup">Follow Up</button>
+                    </td>
+                    <td>
+                      <button class="btn-more-options" aria-label="More options">&vellip;</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 6 -->
+                  <tr>
+                    <td>
+                      <div class="lead-cell">
+                        <div class="lead-avatar pink-lead">SJ</div>
+                        <div class="lead-info">
+                          <span class="lead-name">Sneha Joshi</span>
+                          <span class="lead-enquiry">Trial session</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="status-pill-table follow-up">Follow-up</span></td>
+                    <td>
+                      <div class="action-cell whatsapp">
+                        <svg class="action-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        <span>WhatsApp</span>
+                      </div>
+                    </td>
+                    <td><span class="due-time overdue-time">45 mins ago</span></td>
+                    <td><span class="priority-badge high">High</span></td>
+                    <td>
+                      <button class="btn-table-action red-followup">Follow Up</button>
+                    </td>
+                    <td>
+                      <button class="btn-more-options" aria-label="More options">&vellip;</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 7 -->
+                  <tr>
+                    <td>
+                      <div class="lead-cell">
+                        <div class="lead-avatar green-lead">VM</div>
+                        <div class="lead-info">
+                          <span class="lead-name">Vikram Malhotra</span>
+                          <span class="lead-enquiry">Annual membership</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="status-pill-table engaged">Engaged</span></td>
+                    <td>
+                      <div class="action-cell">
+                        <svg class="action-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>Call</span>
+                      </div>
+                    </td>
+                    <td><span class="due-time">2:00 PM</span></td>
+                    <td><span class="priority-badge medium">Medium</span></td>
+                    <td>
+                      <button class="btn-table-action outline">Call</button>
+                    </td>
+                    <td>
+                      <button class="btn-more-options" aria-label="More options">&vellip;</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- RIGHT COLUMN: Quick Actions & Today's Follow-ups -->
+          <div class="dashboard-side-panels">
+            
+            <!-- Quick Actions Panel -->
+            <section class="panel-card quick-actions-panel">
+              <h2 class="panel-title">Quick Actions</h2>
+              <p class="panel-subtitle">Common tasks for reception</p>
+
+              <div class="quick-actions-grid">
+                <button class="btn-quick-action primary" id="quickAddLead">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                    <line x1="23" y1="11" x2="17" y2="11"></line>
+                  </svg>
+                  <span>+ Add Lead</span>
+                </button>
+
+                <button class="btn-quick-action outline">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span>Log Call</span>
+                </button>
+
+                <button class="btn-quick-action outline">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>Follow-up</span>
+                </button>
+
+                <button class="btn-quick-action outline">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>Schedule</span>
+                </button>
+              </div>
+            </section>
+
+            <!-- Today's Follow-ups Panel -->
+            <section class="panel-card todays-followups-panel">
+              <div class="panel-header">
+                <h2 class="panel-title">Today's Follow-ups</h2>
+                <span class="badge-cyan-count">4 Remaining</span>
+              </div>
+
+              <!-- Filter Tabs -->
+              <div class="followup-tabs-bar">
+                <button class="tab-btn active" data-tab="today">Today</button>
+                <button class="tab-btn" data-tab="upcoming">Upcoming</button>
+                <button class="tab-btn" data-tab="overdue">Overdue</button>
+              </div>
+
+              <!-- Timeline Follow-up Items -->
+              <div class="followup-timeline-list" id="followupList">
+                
+                <div class="timeline-row-item">
+                  <div class="timeline-bullet-indicator"></div>
+                  <div class="timeline-meta">
+                    <span class="timeline-time">10:30 AM</span>
+                    <h3 class="timeline-name">Rahul Sharma</h3>
+                    <span class="timeline-sub">Call &middot; Ready to join</span>
+                  </div>
+                  <button class="btn-complete-task">Complete</button>
+                </div>
+
+                <div class="timeline-row-item">
+                  <div class="timeline-bullet-indicator"></div>
+                  <div class="timeline-meta">
+                    <span class="timeline-time">11:15 AM</span>
+                    <h3 class="timeline-name">Amit Patil</h3>
+                    <span class="timeline-sub">WhatsApp &middot; Interested</span>
+                  </div>
+                  <button class="btn-complete-task">Complete</button>
+                </div>
+
+                <div class="timeline-row-item">
+                  <div class="timeline-bullet-indicator"></div>
+                  <div class="timeline-meta">
+                    <span class="timeline-time">12:00 PM</span>
+                    <h3 class="timeline-name">Sneha Joshi</h3>
+                    <span class="timeline-sub">Call &middot; Follow-up</span>
+                  </div>
+                  <button class="btn-complete-task">Complete</button>
+                </div>
+
+                <div class="timeline-row-item">
+                  <div class="timeline-bullet-indicator"></div>
+                  <div class="timeline-meta">
+                    <span class="timeline-time">02:00 PM</span>
+                    <h3 class="timeline-name">Vikram Malhotra</h3>
+                    <span class="timeline-sub">Call &middot; Personal training</span>
+                  </div>
+                  <button class="btn-complete-task">Complete</button>
+                </div>
+
+              </div>
+
+              <!-- Footer with Shift Time -->
+              <div class="followup-panel-footer">
+                <span class="shift-time-tag">Reception Shift: 08:00 &ndash; 16:00</span>
+                <a href="#" class="view-calendar-link">View Calendar &rarr;</a>
+              </div>
+            </section>
+
+          </div>
+
+        </div>
+
+        <!-- 4. Bottom Philosophy Banner -->
+        <section class="philosophy-banner">
+          <div class="philo-bg-wrapper">
+            <img 
+              src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1600&q=80" 
+              alt="Gym barbell and weights" 
+              class="philo-bg-img" 
+            />
+            <div class="philo-overlay"></div>
+          </div>
+
+          <div class="philo-content">
+            <div class="philo-badge">
+              <span class="philo-badge-dot"></span>
+              <span>GROWTH &amp; CONVERSION PHILOSOPHY</span>
+            </div>
+            <h2 class="philo-title">
+              MORE CONVERSATIONS.<br />
+              <span class="philo-title-accent">STRONGER MEMBERS.</span>
+            </h2>
+            <p class="philo-desc">
+              Turn enquiries into committed members with smarter follow-ups. Consistent front-desk execution drives 3.2x higher lead-to-membership conversions.
+            </p>
+
+            <div class="philo-stats-pills">
+              <div class="philo-stat-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                <span>Avg 14 Min First Response</span>
+              </div>
+              <div class="philo-stat-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span>82% Follow-up Rate</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="philo-watermark">
+            <span class="philo-italic-sub">Fit People</span>
+            <span class="philo-italic-main">Happier Communities</span>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Optional Add Lead Modal -->
+  <div class="modal-backdrop" id="addLeadModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">New Lead Enquiry</h3>
+        <button class="modal-close-btn" id="closeLeadModal">&times;</button>
+      </div>
+      <form id="leadModalForm" class="modal-form">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="modal-input" placeholder="e.g. John Doe" required />
+        </div>
+        <div class="form-group">
+          <label>Enquiry Type</label>
+          <input type="text" class="modal-input" placeholder="e.g. Annual membership" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" class="modal-input" placeholder="+1 (555) 000-0000" required />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-cancel" id="cancelLeadModal">Cancel</button>
+          <button type="submit" class="btn-save">Save Lead</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/Dashboard.js"></script>
+</body>
+</html>

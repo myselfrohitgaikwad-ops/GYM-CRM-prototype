@@ -1,0 +1,126 @@
+.followups-app {--main-bg:#f4f8fc;background:#f4f8fc}
+.followups-app .sidebar {width:var(--sidebar-width)}
+.followups-content {padding:30px 32px 28px;gap:24px;max-width:1600px;width:100%;margin:0 auto;flex:1}
+.followups-app .dashboard-header {height:60px;padding:0 32px}
+.followups-app .header-search-box {width:381px}
+.followups-app .header-search-box input {height:30px;background:#f8fafc;border:1px solid #969696;border-radius:8px;font-size:12px;padding-left:37px}
+.followups-app .header-right {gap:16px}
+.followups-app .header-status-pill {background:#ecfdf5;border-color:#a7f3d099;color:#047857;font-size:12px;padding:5px 11px}
+.followups-app .header-date-pill {background:#f1f5f9b3;border-color:#e2e8f099;border-radius:8px;font-size:12px;padding:5px 13px}
+.followups-app .header-action-bell {width:32px;height:32px;border:0;background:transparent}
+.followups-app .header-user-avatar {width:28px;height:28px;background:#0d9488;font-size:12px}
+.followups-titlebar {display:flex;align-items:center;justify-content:space-between;gap:20px}
+.followups-titleline {display:flex;align-items:center;gap:10px}
+.followups-titleline h1 {font:700 24px/32px 'Plus Jakarta Sans',sans-serif;letter-spacing:-.6px;color:#0f172a}
+.due-badge {padding:3px 11px;border:1px solid #bfdbfe99;border-radius:999px;background:#eff6ff;color:#1d4ed8;font:600 12px/16px 'Plus Jakarta Sans',sans-serif}
+.followups-titlebar p {margin-top:4px;color:#64748b;font:400 12px/16px 'Plus Jakarta Sans',sans-serif}
+.followups-actions {display:flex;align-items:center;gap:10px}
+.schedule-export,.schedule-primary {height:38px;border-radius:8px;padding:0 15px;display:flex;align-items:center;gap:7px;font:600 12px 'Plus Jakarta Sans',sans-serif;cursor:pointer;white-space:nowrap}
+.schedule-export {background:#fff;border:1px solid #a2b7d2;color:#334155}.schedule-primary {background:linear-gradient(135deg,#1677ff,#00c2ff);border:0;color:#fff;box-shadow:0 1px 3px #3b82f64d}.schedule-export span,.schedule-primary span {font-size:16px;line-height:1}
+.followup-kpis {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.follow-kpi {height:153px;padding:16px 17px;background:#fff;border:1px solid #9198a1cc;border-radius:12px;display:flex;flex-direction:column;gap:3px}
+.follow-kpi.overdue-kpi {background:linear-gradient(180deg,#fff,#fff1f233);border-color:#fecdd3cc}
+.fk-top {display:flex;align-items:center;justify-content:space-between;color:#94a3b8;font:700 11px/16.5px 'Plus Jakarta Sans',sans-serif;letter-spacing:.55px}
+.fk-top i {width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:#eff6ff;font-style:normal;font-size:14px;color:#3b82f6}
+.fk-top .red-icon {background:#fff1f2;color:#f43f5e}.fk-top .green-icon{background:#ecfdf5;color:#10b981}.fk-top .violet-icon{background:#eef2ff;color:#6366f1}.overdue-kpi .fk-top{color:#f43f5e}
+.fk-value {height:40px;display:flex;align-items:center;gap:8px}.fk-value strong {font:800 24px/32px 'Plus Jakarta Sans',sans-serif;color:#0f172a}.overdue-kpi .fk-value strong{color:#e11d48}.fk-value em {font:600 11px 'Plus Jakarta Sans',sans-serif;color:#059669;font-style:normal;white-space:nowrap}.urgent-mini,.pipeline-mini {font:700 10px/15px 'Plus Jakarta Sans',sans-serif;padding:1px 6px;border-radius:4px;white-space:nowrap}.urgent-mini{color:#be123c;background:#ffe4e6}.pipeline-mini{color:#4338ca;background:#eef2ff}.follow-kpi small{color:#64748b;font:400 11px/16px 'Plus Jakarta Sans',sans-serif;white-space:nowrap}
+.follow-filters {padding:13px 16px;background:#fff;border:1px solid #9198a1cc;border-radius:12px;display:flex;flex-direction:column;gap:11px}
+.follow-search {height:38px;max-width:480px;border:1px solid #a2b7d2;border-radius:8px;display:flex;align-items:center;gap:9px;padding:0 9px;color:#94a3b8}.follow-search svg{width:14px;height:14px}.follow-search input{min-width:0;flex:1;border:0;outline:0;background:transparent;font:400 11px 'Plus Jakarta Sans',sans-serif;color:#334155}.follow-search input::placeholder{color:#94a3b8}.follow-search kbd{font:600 9px 'Plus Jakarta Sans',sans-serif;color:#94a3b8;background:#f8fafc;border:1px solid #e2e8f0;border-radius:4px;padding:2px 5px}
+.follow-filter-row {display:flex;align-items:center;gap:8px;flex-wrap:wrap}.follow-filter-row select{height:27px;max-width:175px;border:1px solid #a2b7d2;border-radius:6px;background:#fff;padding:0 8px;color:#334155;font:500 10px 'Plus Jakarta Sans',sans-serif}.follow-clear{padding:3px 5px;border:0;background:transparent;color:#2563eb;font:600 10px 'Plus Jakarta Sans',sans-serif;cursor:pointer;white-space:nowrap}
+.follow-main-grid {display:grid;grid-template-columns:minmax(0,2fr) minmax(300px,.94fr);align-items:start;gap:28px}
+.queue-card,.schedule-card,.overdue-card {background:#fff;border:1px solid #b8c4d1;border-radius:12px;overflow:hidden}
+.queue-header {min-height:78px;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.queue-titleline {display:flex;align-items:center;gap:8px}.queue-titleline h2,.schedule-card h2,.overdue-card h2{font:700 14px/20px 'Plus Jakarta Sans',sans-serif;color:#0f172a}.queue-titleline span{padding:2px 8px;background:#f1f5f9;border-radius:999px;color:#475569;font:600 9px 'Plus Jakarta Sans',sans-serif;white-space:nowrap}.queue-header p{margin-top:2px;color:#94a3b8;font:400 10px/14px 'Plus Jakarta Sans',sans-serif}.queue-header label{display:flex;align-items:center;gap:6px;color:#94a3b8;font:400 10px 'Plus Jakarta Sans',sans-serif;white-space:nowrap}.queue-header select{height:27px;border:1px solid #a2b7d2;border-radius:6px;background:#f8fafc;color:#334155;font:600 10px 'Plus Jakarta Sans',sans-serif;padding:0 8px}
+.queue-scroll {overflow-x:auto}.follow-table {width:100%;min-width:730px;border-collapse:collapse;table-layout:fixed;text-align:left}.follow-table th {height:45px;padding:5px 10px;color:#94a3b8;font:600 9px/12px 'Plus Jakarta Sans',sans-serif;letter-spacing:.02em;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0}.follow-table th:nth-child(1){width:24%}.follow-table th:nth-child(2){width:14%}.follow-table th:nth-child(3){width:14%}.follow-table th:nth-child(4){width:11%}.follow-table th:nth-child(5){width:11%}.follow-table th:nth-child(6){width:12%}.follow-table th:nth-child(7){width:10%}.follow-table th:nth-child(8){width:4%}
+.follow-table td {height:77px;padding:9px 10px;border-bottom:1px solid #f1f5f9;color:#475569;font:400 10px/14px 'Plus Jakarta Sans',sans-serif;vertical-align:middle}.follow-table tbody tr:last-child td{border-bottom:0}.follow-table tbody tr:hover td{background:#f8fafc}.follow-table tbody tr.overdue-queue-row td{background:#fffafa}
+.follow-lead {display:flex;align-items:center;gap:9px;min-width:0}.follow-lead>span{display:flex;flex-direction:column;min-width:0}.follow-lead b{color:#0f172a;font:700 10px/13px 'Plus Jakarta Sans',sans-serif}.follow-lead small{color:#94a3b8;font:400 9px/12px 'Plus Jakarta Sans',sans-serif}.avatar {font:700 9px Inter,sans-serif;width:28px;height:28px;flex:0 0 28px;border-radius:50%;display:grid;place-items:center;font-style:normal}.avatar.rs{background:#dbeafe;color:#2563eb}.avatar.ap{background:#ede9fe;color:#7c3aed}.avatar.sj{background:#ffe4e6;color:#e11d48}.avatar.vm{background:#cffafe;color:#0891b2}.avatar.nk{background:#d1fae5;color:#059669}.avatar.rv{background:#fef3c7;color:#d97706}.avatar.ai{background:#fce7f3;color:#db2777}
+.time-cell {color:#334155!important;font-weight:500!important}.late-time{color:#f43f5e!important;font-weight:700!important}.channel-phone{color:#2563eb}.channel-whatsapp{color:#10b981}.priority,.queue-status{display:inline-block;padding:3px 7px;border-radius:999px;font:600 9px/12px 'Plus Jakarta Sans',sans-serif;white-space:nowrap}.hot-priority{background:#fff7ed;color:#ea580c;border:1px solid #fed7aa}.high-priority{background:#fff7ed;color:#ea580c}.medium-priority{background:#f1f5f9;color:#475569}.queue-status{background:#eff6ff;color:#2563eb;border:1px solid #dbeafe}.overdue-status{background:#fff1f2;color:#e11d48;border-color:#fecdd3}.scheduled-status{background:#faf5ff;color:#9333ea;border-color:#e9d5ff}
+.queue-action {min-width:54px;min-height:28px;padding:4px 7px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;color:#334155;font:600 9px/12px 'Plus Jakarta Sans',sans-serif;cursor:pointer}.call-action{min-height:34px;border:0;background:linear-gradient(120deg,#06b6d4,#0284c7);color:#fff;box-shadow:0 3px 8px #0891b233}.overdue-action{min-height:34px;background:#f43f5e;border-color:#f43f5e;color:#fff;box-shadow:0 3px 8px #f43f5e33}.more-action{border:0;background:none;color:#94a3b8;font-size:18px;cursor:pointer;padding:0 2px}.queue-footer{height:49px;padding:0 24px;border-top:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;color:#94a3b8;font:400 9px 'Plus Jakarta Sans',sans-serif;white-space:nowrap}.queue-footer b{color:#475569;font-weight:500}.queue-pages{display:flex;align-items:center;gap:5px}.queue-pages button{height:26px;padding:0 9px;border:1px solid #dbe2ea;border-radius:6px;background:#fff;color:#64748b;font:500 9px 'Plus Jakarta Sans',sans-serif;cursor:pointer}.queue-pages button.page-active{min-width:25px;background:#2563eb;color:#fff;border-color:#2563eb;padding:0}
+.follow-side-panels {display:flex;flex-direction:column;gap:18px}.schedule-card{padding:16px 18px 0}.schedule-card>header{display:flex;justify-content:space-between;align-items:flex-start;gap:7px}.schedule-card h2{font-size:13px}.current-time{display:block;margin-top:4px;color:#2563eb;font:500 9px 'Plus Jakarta Sans',sans-serif;background:#eff6ff;padding:2px 7px;border-radius:999px;width:max-content}.calendar-link{border:0;background:none;color:#2563eb;font:500 9px 'Plus Jakarta Sans',sans-serif;white-space:nowrap;cursor:pointer;padding:3px 0}
+.timeline {position:relative;margin:15px 0 12px 13px;display:flex;flex-direction:column;gap:0}.timeline:before{content:"";position:absolute;left:5px;top:10px;bottom:10px;width:1px;background:#dbe3ec}.timeline-entry{position:relative;min-height:68px;display:flex;align-items:flex-start;gap:10px;padding:0 0 8px}.timeline-entry>i{position:relative;z-index:1;margin-top:2px;width:11px;height:11px;flex:0 0 11px;border:2px solid #cbd5e1;border-radius:50%;background:#cbd5e1}.timeline-entry.active-entry>i{background:#22d3ee;border-color:#22d3ee;box-shadow:0 0 0 4px #cffafe}.timeline-entry>div{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1}.timeline-entry b{color:#2563eb;font:700 9px/12px 'Plus Jakarta Sans',sans-serif}.timeline-entry strong{color:#0f172a;font:700 9px/12px 'Plus Jakarta Sans',sans-serif}.timeline-entry small{color:#94a3b8;font:400 8px/11px 'Plus Jakarta Sans',sans-serif}.complete-task{height:21px;padding:0 6px;border:0;border-radius:5px;background:#f1f5f9;color:#475569;font:500 8px 'Plus Jakarta Sans',sans-serif;cursor:pointer;white-space:nowrap}.complete-task.done{background:#dcfce7;color:#15803d}.schedule-card>footer{height:35px;margin:0 -18px;padding:0 18px;border-top:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;color:#94a3b8;font:400 8px 'Plus Jakarta Sans',sans-serif;white-space:nowrap}
+.overdue-card {padding:15px 16px 12px;border-color:#fecdd3;background:linear-gradient(180deg,#fff,#fffafa)}.overdue-card>header{display:flex;align-items:center;justify-content:space-between;gap:6px}.overdue-heading{display:flex;align-items:center;gap:9px}.overdue-heading>i{width:10px;height:10px;border-radius:50%;background:#f43f5e}.overdue-card h2{font-size:12px}.overdue-card>header>span{padding:3px 8px;border:1px solid #fecdd3;border-radius:999px;background:#fff1f2;color:#e11d48;text-align:center;font:600 8px/10px 'Plus Jakarta Sans',sans-serif}.overdue-card>p{margin:9px 0 12px 19px;color:#94a3b8;font:400 9px/13px 'Plus Jakarta Sans',sans-serif}.overdue-person{min-height:54px;margin-top:7px;padding:7px 6px 7px 9px;border:1px solid #fecdd3;border-radius:8px;background:#fff;display:flex;align-items:center;gap:5px}.overdue-person>div{min-width:0;flex:1;display:flex;flex-direction:column}.overdue-person b{color:#0f172a;font:700 9px/12px 'Plus Jakarta Sans',sans-serif}.overdue-person small{color:#e11d48;font:500 8px/11px 'Plus Jakarta Sans',sans-serif}.mini-call,.mini-whatsapp{height:23px;padding:0 6px;border:1px solid #cbd5e1;border-radius:5px;background:#fff;color:#475569;font:600 8px 'Plus Jakarta Sans',sans-serif;cursor:pointer;white-space:nowrap}.mini-whatsapp{border-color:#059669;background:#059669;color:#fff}
+.follow-growth {height:346px;position:relative;overflow:hidden;border-radius:12px;background:#07111f;color:white;padding:39px 40px;box-shadow:0 8px 18px #07111f20}.follow-growth>img{position:absolute;right:4%;top:12%;width:38%;height:76%;object-fit:cover;object-position:center;border:1px solid #334155;border-radius:12px}.follow-growth-shade{position:absolute;inset:0;background:linear-gradient(90deg,#07111f 0%,#07111f 47%,rgba(7,17,31,.83) 63%,rgba(7,17,31,.1) 100%)}.follow-growth-copy{position:relative;z-index:1;max-width:57%}.follow-growth-copy>span{color:#22d3ee;font:700 10px 'Plus Jakarta Sans',sans-serif;letter-spacing:.06em}.follow-growth-copy h2{margin-top:18px;color:#fff;font:800 28px/36px 'Plus Jakarta Sans',sans-serif;letter-spacing:-.45px}.follow-growth-copy p{margin-top:13px;color:#cbd5e1;font:400 12px/19px 'Plus Jakarta Sans',sans-serif;max-width:570px}.follow-growth .growth-stats{margin-top:18px;gap:12px}.follow-growth .growth-stats span{display:inline-flex;align-items:center;border:1px solid #334155;border-radius:999px;padding:7px 10px;color:#e2e8f0;background:#ffffff09;font:500 9px 'Plus Jakarta Sans',sans-serif;white-space:nowrap}.fit-mantra{position:absolute;z-index:2;right:6%;bottom:22%;padding:5px 10px;background:#07111fd9;border-radius:999px;color:#e2e8f0;font:700 9px 'Plus Jakarta Sans',sans-serif;letter-spacing:.02em}
+.follow-footer{min-height:42px;padding:0 32px;background:#fff;border-top:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;color:#94a3b8;font:400 9px 'Plus Jakarta Sans',sans-serif}.follow-footer nav{display:flex;align-items:center;gap:12px}.follow-footer a{color:#64748b;text-decoration:none}.follow-footer i{font-style:normal;color:#cbd5e1}
+.followups-app .modal-backdrop{z-index:200}
+@media(max-width:1199px){
+  .followups-app .sidebar{width:var(--sidebar-width)}
+  .followups-content{padding:24px 20px}
+  .follow-main-grid{grid-template-columns:minmax(0,1.8fr) minmax(280px,1fr);gap:16px}
+  .follow-growth{height:300px}
+}
+@media(max-width:991px){
+  .followups-app .sidebar{position:fixed;left:0;top:0;bottom:0;transform:translateX(-100%);z-index:200}
+  .followups-app .sidebar.mobile-open{transform:translateX(0)}
+  .followups-app .mobile-sidebar-toggle{display:flex}
+  .followups-app .header-status-pill,.followups-app .header-date-pill{display:none}
+  .followups-app .dashboard-header{padding:0 18px}
+  .followups-content{padding:20px 18px}
+  .followup-kpis{height:auto;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .follow-kpi{height:auto;min-height:120px}
+  .follow-filters{height:auto}
+  .follow-main-grid{height:auto;grid-template-columns:1fr}
+  .follow-side-panels{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:16px}
+  .schedule-card{height:auto;min-height:360px}
+  .overdue-card{height:auto;min-height:300px}
+  .follow-growth{height:280px}
+  .follow-growth-copy{max-width:64%}
+  .follow-growth>img{width:42%}
+  .follow-footer{padding:0 18px}
+  .queue-scroll{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .follow-table{min-width:700px}
+}
+@media(max-width:767px){
+  .followups-content{padding:16px 14px}
+  .followups-titlebar{align-items:flex-start;flex-direction:column;gap:12px}
+  .followups-titlebar p{max-width:100%}
+  .followups-actions{width:100%;display:flex;gap:8px}
+  .schedule-export,.schedule-primary{flex:1;justify-content:center;padding:0 10px;font-size:11px}
+  .followup-kpis{gap:9px}
+  .follow-kpi{padding:12px}
+  .follow-kpi small{font-size:9px;white-space:normal}
+  .follow-filters{padding:10px}
+  .follow-filter-row{gap:8px;display:flex;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;padding-bottom:6px;width:100%}
+  .follow-filter-row select{max-width:none;flex:0 0 auto;white-space:nowrap;height:34px}
+  .follow-clear{flex:0 0 auto;white-space:nowrap}
+  .follow-search{max-width:none}
+  .queue-header{padding:12px;height:auto;min-height:60px;flex-wrap:wrap;gap:8px}
+  .queue-footer{padding:0 12px;height:auto;min-height:48px;flex-wrap:wrap;gap:8px}
+  .queue-pages{gap:3px}
+  .queue-pages button{padding:0 6px}
+  .follow-side-panels{display:flex;flex-direction:column}
+  .schedule-card,.overdue-card{width:100%;height:auto;min-height:auto}
+  .follow-growth{height:290px;padding:22px 18px}
+  .follow-growth-copy{max-width:100%}
+  .follow-growth-copy h2{font-size:19px;line-height:25px;margin-top:10px}
+  .follow-growth-copy p{font-size:10px;line-height:16px}
+  .follow-growth>img{width:65%;height:100%;top:0;right:0;opacity:.18}
+  .fit-mantra{display:none}
+  .follow-growth .growth-stats{gap:6px;flex-wrap:wrap}
+  .follow-growth .growth-stats span{font-size:8px;padding:6px}
+  .follow-footer{align-items:flex-start;flex-direction:column;justify-content:center;gap:4px;padding:8px 14px}
+}
+@media(max-width:575px){
+  .followups-content{padding:12px 10px}
+  .follow-filter-row select{flex:0 0 auto}
+}
+@media(max-width:374px){
+  .followup-kpis{grid-template-columns:1fr}
+  .followups-actions{flex-direction:column}
+  .schedule-export,.schedule-primary{width:100%}
+}
+.followups-app .header-date-pill img{width:14px;height:14px}
+.followups-app .header-action-bell img{width:20px;height:20px}
+.followups-app .schedule-export img,.followups-app .schedule-primary img{width:14px;height:14px}
+.fk-top i img{width:16px;height:16px}
+.follow-search img{width:16px;height:16px;flex:0 0 16px}
+.channel-icon{width:14px;height:14px;vertical-align:-3px;margin-right:4px}
+.more-action img{width:16px;height:16px;display:block}
+.follow-growth>img{right:4%;top:18.5%;width:38%;height:63%}
+.follow-growth-copy{max-width:576px}
+.follow-growth-copy h2{margin-top:8px;font-size:24px;line-height:32px;letter-spacing:-.6px}
+.follow-growth-copy p{margin-top:8px;line-height:19.5px}
+.follow-growth .growth-stats{margin-top:8px}
+.follow-filter-row select{appearance:none;background-image:url("../assets/followups-icons/icon-10.svg");background-position:right 8px center;background-repeat:no-repeat;background-size:14px 14px;padding-right:27px}
+.follow-filter-row #followDate{background-image:url("../assets/followups-icons/icon-11.svg"),url("../assets/followups-icons/icon-10.svg");background-position:left 8px center,right 8px center;background-repeat:no-repeat;background-size:14px 14px,14px 14px;padding-left:28px}
+@media(max-width:900px){.follow-growth>img{width:42%;height:76%;top:12%;right:4%}}
+@media(max-width:600px){.follow-growth>img{width:70%;height:100%;top:0;right:0;opacity:.22}.follow-growth-copy h2{font-size:19px;line-height:25px;margin-top:12px}.follow-growth-copy p{font-size:10px;line-height:16px}.follow-growth-copy{max-width:100%}.fit-mantra{display:none}}
